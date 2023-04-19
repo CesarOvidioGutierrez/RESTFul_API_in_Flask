@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    command: python app.py
+    environment:
+      - FLASK_ENV=development
+      - MONGODB_URI=mongodb://mongo:27017/users
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
