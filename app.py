@@ -15,8 +15,8 @@ def run():
     app = create_app()
     @app.route('/')
     def index():
-        return 'Hola, este es mi primer contenedor Docker!'
-    app.run(host='0.0.0.0')
+        return 'Hola, estas en la raiz!'
+    app.run(debug=True, host='0.0.0.0')
 
 
 
